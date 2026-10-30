@@ -22,9 +22,12 @@ Tick each box as you complete it. The workshop is **done** when all 10 are ticke
 - [x] **AC-05:** `docker compose up -d` brings up two healthy containers within 60 seconds.
 - [x] **AC-06:** `web` waits for `db` health (`docker compose config` shows `condition: service_healthy`).
 - [x] **AC-07:** `.github/workflows/ci.yml` triggers on`push` to `main`.
-- [ ] **AC-08:** The CI step `scan` uses `aquasecurity/trivy-action` with `severity: CRITICAL` and `exit-code: '1'`, and reports **0 CRITICAL** findings.
+- [x] **AC-08:** The CI step `scan` uses `aquasecurity/trivy-action` with `severity: CRITICAL` and `exit-code: '1'`, and reports **0 CRITICAL** findings.
 - [x] **AC-09:** The CI step `push` pushes two tags: `:latest` and `:${{ github.sha }}`.
 - [ ] **AC-10:** The `build-scan-push` job goes green on your fork after Docker Hub secrets are configured.
+
+AC-08 verified locally with Trivy (0 CRITICAL after image security updates).
+AC-10 is pending: the fork has Docker Hub secrets and an active workflow, but GitHub has not created a run after pushes.
 
 ---
 
